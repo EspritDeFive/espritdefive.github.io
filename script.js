@@ -1,57 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Parallax effect for the sensibility nodes
     const nodes = document.querySelectorAll('.node');
     const hero = document.querySelector('.hero');
 
-    hero.addEventListener('mousemove', (e) => {
-        const { clientX, clientY } = e;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
+    // 1. Mouse Parallax Effect
+    if (hero) {
+        hero.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
 
-        nodes.forEach((node, index) => {
-            const speed = (index + 1) * 0.05;
-            const x = (clientX - centerX) * speed;
-            const y = (clientY - centerY) * speed;
-            node.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+            nodes.forEach((node, index) => {
+                const speed = (index + 1) * 0.05;
+                const x = (clientX - centerX) * speed;
+                const y = (clientY - centerY) * speed;
+                // Using transform for mouse parallax
+                node.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+            });
         });
-    });
+    }
 
-    // Intersection Observer for scroll reveal
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    // 2. Scroll Reveal Animation
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Apply reveal effect to containers and sections
-    document.querySelectorAll('section.container').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(40px)';
-        section.style.transition = 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
-        observer.observe(section);
+    document.querySelectorAll('section.container, .video-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+        revealObserver.observe(el);
     });
 
-    // Individual member cards staggered reveal
-    const cards = document.querySelectorAll('.member-card');
-    cards.forEach((card, index) => {
+    // 3. Member Cards staggered reveal
+    document.querySelectorAll('.member-card').forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
-        
+
         const cardObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
             }
         }, { threshold: 0.2 });
-        
+
         cardObserver.observe(card);
     });
+
+    // 4. Organic Floating Motion (JS driven)
+    let tick = 0;
+    function animateNodes() {
+        tick += 0.003;
+        nodes.forEach((node, index) => {
+            const offset = index * 1.5;
+            const x = Math.sin(tick + offset) * 100 + Math.cos(tick * 0.5 + offset) * 20;
+            const y = Math.cos(tick * 0.7 + offset) * 80 + Math.sin(tick * 0.3 + offset) * 30;
+            // Using 'translate' separate from 'transform' to avoid conflict with mouse parallax
+            node.style.translate = `${x}px ${y}px`;
+        });
+        requestAnimationFrame(animateNodes);
+    }
+
+    if (nodes.length > 0) {
+        animateNodes();
+    }
 });
