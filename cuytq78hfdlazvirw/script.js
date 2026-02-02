@@ -125,38 +125,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // === 2. Concept Poster Parallax ===
+    // === 2. Optimized Scroll Effects (Parallax & Reveal) ===
+    const heroLogo = document.querySelector('.hero-logo-large');
     const conceptPoster = document.querySelector('.concept-poster');
-    window.addEventListener('scroll', () => {
-        const visual = document.querySelector('.concept-visual');
-        if (!visual || !conceptPoster) return;
-        const rect = visual.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const offset = (window.innerHeight - rect.top) * 0.05;
-            conceptPoster.style.transform = `translateY(${offset - 20}px)`;
-        }
-    });
+    const conceptVisual = document.querySelector('.concept-visual');
+    const reveals = document.querySelectorAll('.reveal-text');
 
-    // === 3. Scroll Reveal ===
+    // Performance optimization: Using requestAnimationFrame & ticking
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateParallax() {
+        const scroll = lastScrollY;
+
+        // Hero Logo Parallax
+        if (heroLogo) {
+            heroLogo.style.transform = `translateY(${scroll * 0.4}px)`;
+            heroLogo.style.opacity = Math.max(0, 1 - scroll / 600);
+        }
+
+        // Concept Poster Parallax
+        if (conceptPoster && conceptVisual) {
+            const rect = conceptVisual.getBoundingClientRect();
+            // Only calculate if in viewport
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const offset = (window.innerHeight - rect.top) * 0.05;
+                conceptPoster.style.transform = `translateY(${offset - 20}px)`;
+            }
+        }
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }, { passive: true }); // Better performance on mobile
+
+    // === 3. Scroll Reveal (Intersection Observer) ===
     const observerOptions = { threshold: 0.2, rootMargin: "0px" };
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('in-view');
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target); // Performance: stop observing once revealed
+            }
         });
     }, observerOptions);
-    document.querySelectorAll('.reveal-text').forEach(el => revealObserver.observe(el));
+    reveals.forEach(el => revealObserver.observe(el));
 
-    // === 4. Hero Logo Scroll Effect ===
-    const logo = document.querySelector('.hero-logo-large');
-    window.addEventListener('scroll', () => {
-        const scroll = window.scrollY;
-        if (logo) {
-            logo.style.transform = `translateY(${scroll * 0.4}px)`;
-            logo.style.opacity = 1 - scroll / 600;
-        }
-    });
-
-    // === 5. Navigation & Mobile Menu ===
+    // === 4. Navigation & Mobile Menu ===
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
     if (navToggle && mainNav) {
@@ -166,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // === 6. Advanced Scroll & Auto-Expand ===
+    // === 5. Advanced Scroll & Auto-Expand ===
     const HEADER_OFFSET = 80;
 
     document.querySelectorAll('nav a').forEach(anchor => {
@@ -175,19 +196,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = this.getAttribute('href');
             const target = document.querySelector(href);
 
-            // モバイルメニューを閉じる
             if (navToggle && mainNav) {
                 navToggle.classList.remove('active');
                 mainNav.classList.remove('active');
             }
 
             if (target) {
-                // 折りたたみセクションを展開
                 if (target.classList.contains('collapsible')) {
                     target.classList.remove('collapsed');
                 }
 
-                // レイアウトの確定（メニュー閉じる・展開開始）を待ってから正確にスクロール
                 setTimeout(() => {
                     const scrollTarget = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
                     window.scrollTo({
@@ -199,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === 7. Collapsible Section Toggle ===
+    // === 6. Collapsible Section Toggle ===
     document.querySelectorAll('.collapsible').forEach(section => {
         section.querySelectorAll('.toggle-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
