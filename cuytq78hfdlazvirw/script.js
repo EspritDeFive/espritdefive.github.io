@@ -4,9 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             renderMembers(data.members);
+            renderSounds(data.sounds);
             renderWorks(data.works);
         })
         .catch(err => console.error('Error loading data:', err));
+
+    function renderSounds(sounds) {
+        const container = document.getElementById('sounds-list');
+        if (!container || !sounds) return;
+        container.innerHTML = sounds.map(s => `
+            <div class="sound-item">
+                <div class="item-meta">
+                    <div class="meta-header">
+                        ${s.tag ? `<span class="tag">${s.tag}</span>` : ''}
+                        <span class="label">${s.date}</span>
+                    </div>
+                    <h4 class="item-title">${s.title}</h4>
+                    ${s.desc ? `<p class="item-desc">${s.desc}</p>` : ''}
+                </div>
+                <div class="sc-cropper">
+                    <iframe class="sc-player" height="120" scrolling="no" frameborder="no" allow="autoplay" 
+                        src="https://w.soundcloud.com/player/?url=${encodeURIComponent(s.url)}&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false">
+                    </iframe>
+                </div>
+            </div>
+        `).join('');
+    }
 
     function renderMembers(members) {
         const container = document.getElementById('member-list');
@@ -46,14 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
         container.innerHTML = works.map(w => `
             <div class="work-card">
+                <div class="item-meta">
+                    <div class="meta-header">
+                        ${w.tag ? `<span class="tag">${w.tag}</span>` : ''}
+                        <span class="label">${w.date}</span>
+                    </div>
+                    <h4 class="item-title">${w.title}</h4>
+                    ${w.desc ? `<p class="item-desc">${w.desc}</p>` : ''}
+                </div>
                 <div class="video-preview">
                     <iframe src="https://www.youtube.com/embed/${w.youtubeId}?controls=0" frameborder="0"
                         allowfullscreen title="${w.title}"></iframe>
-                </div>
-                <div class="work-meta">
-                    <span class="label">${w.date}</span>
-                    <h4>${w.title}</h4>
-                    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 5px;">${w.desc}</p>
                 </div>
             </div>
         `).join('');

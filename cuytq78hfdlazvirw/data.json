@@ -31,18 +31,29 @@
             "detail": "キーボード担当。クラシックからエレクトロまで精通し、バンドの音に多彩な色彩を加える。"
         }
     ],
-    "works": [
+    "sounds": [
         {
-            "date": "2026.01.15",
-            "title": "First Impulse",
-            "desc": "Live at Perception",
-            "youtubeId": "3LqU9ilCzSE"
+            "date": "2025.10.11",
+            "title": "Automatic",
+            "url": "https://soundcloud.com/esprit-de-five/automatic-cover-live",
+            "tag": "Live",
+            "desc": "GGG2025"
         },
         {
-            "date": "2026.02.01",
-            "title": "Resonance",
-            "desc": "Official Visualizer",
-            "youtubeId": "dQw4w9WgXcQ"
+            "date": "2025.10.11",
+            "title": "Pretender",
+            "url": "https://soundcloud.com/esprit-de-five/pretender",
+            "tag": "Live",
+            "desc": "GGG2025"
+        }
+    ],
+    "works": [
+        {
+            "date": "2026.01.31",
+            "title": "First Impulse",
+            "desc": "Live at Perception. Multi-angle cinematic capture.",
+            "youtubeId": "3LqU9ilCzSE",
+            "tag": "Live"
         }
     ]
 }
