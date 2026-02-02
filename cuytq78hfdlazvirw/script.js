@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `,
             youtube: (item) => {
                 if (item.canEmbed) {
-                    // 埋め込みモード
                     return `
                         <div class="video-preview">
                             <iframe src="https://www.youtube.com/embed/${item.youtubeId}?controls=1" frameborder="0"
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     `;
                 } else {
-                    // サムネイル+外部リンクモード
                     return `
                         <a href="https://www.youtube.com/watch?v=${item.youtubeId}" class="ref-card-link" target="_blank">
                             <div class="video-preview thumbnail-mode">
@@ -87,9 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = items.map(item => {
             const media = UI.templates[type] ? UI.templates[type](item) : '';
             if (type === 'connect' || type === 'gallery') return media;
-
             const className = type === 'sound' ? 'sound-item' : (type === 'youtube') ? 'work-card' : 'generic-item';
-
             return `<div class="${className}">${UI.meta(item)}${media}</div>`;
         }).join('');
     }
@@ -160,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // === 5. Mobile Nav Toggle ===
+    // === 5. Navigation & Mobile Menu ===
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
     if (navToggle && mainNav) {
@@ -168,25 +164,37 @@ document.addEventListener('DOMContentLoaded', () => {
             navToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
         });
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-            });
-        });
     }
 
-    // === 6. Smooth Scroll & Section Auto-Expand ===
+    // === 6. Advanced Scroll & Auto-Expand ===
+    const HEADER_OFFSET = 80;
+
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const href = this.getAttribute('href');
             const target = document.querySelector(href);
+
+            // モバイルメニューを閉じる
+            if (navToggle && mainNav) {
+                navToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            }
+
             if (target) {
+                // 折りたたみセクションを展開
                 if (target.classList.contains('collapsible')) {
                     target.classList.remove('collapsed');
                 }
-                target.scrollIntoView({ behavior: 'smooth' });
+
+                // レイアウトの確定（メニュー閉じる・展開開始）を待ってから正確にスクロール
+                setTimeout(() => {
+                    const scrollTarget = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+                    window.scrollTo({
+                        top: scrollTarget,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         });
     });
