@@ -506,27 +506,31 @@ nav a:hover {
 .play-overlay {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    opacity: 0.8;
+    gap: 12px;
+    padding: 25px 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    opacity: 0.9;
     transition: all 0.4s var(--anim-smooth);
     pointer-events: none;
 }
 
 .play-icon {
-    font-size: 2.5rem;
-    color: var(--gta-white);
+    font-size: 2rem;
+    color: var(--accent-green-bright);
 }
 
 .play-text {
-    font-size: 0.65rem;
-    font-weight: 700;
+    font-size: 0.85rem;
+    font-weight: 900;
     color: var(--gta-white);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     white-space: nowrap;
 }
 
@@ -542,7 +546,6 @@ nav a:hover {
 
 .ref-card-link:hover .play-overlay {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .video-preview iframe {

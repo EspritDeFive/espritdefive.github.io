@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
             renderMembers(data.members);
             renderSection('live-list', data.live);
             renderSection('sounds-list', data.sounds, 'sound');
-            renderSection('videos-grid', data.videos, 'video');
+            renderSection('videos-grid', data.videos, 'youtube');
             renderSection('works-list', data.works);
             renderSection('gallery-grid', data.gallery, 'gallery');
             renderSection('connect-list', data.connect, 'connect');
-            renderSection('references-list', data.references, 'reference');
-            renderSection('activities-list', data.activities); // New activities section
+            renderSection('references-list', data.references, 'youtube');
+            renderSection('activities-list', data.activities, 'youtube');
         })
         .catch(err => console.error('Error loading data:', err));
 
@@ -37,23 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     </iframe>
                 </div>
             `,
-            video: (item) => `
-                <div class="video-preview">
-                    <iframe src="https://www.youtube.com/embed/${item.youtubeId}?controls=0" frameborder="0"
-                        allowfullscreen title="${item.title}"></iframe>
-                </div>
-            `,
-            reference: (item) => `
-                <a href="https://www.youtube.com/watch?v=${item.youtubeId}" class="ref-card-link" target="_blank">
-                    <div class="video-preview thumbnail-mode">
-                        <img src="https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg" alt="${item.title}" class="ref-thumb">
-                        <div class="play-overlay">
-                            <span class="play-icon">▶</span>
-                            <span class="play-text">WATCH ON YOUTUBE</span>
+            youtube: (item) => {
+                if (item.canEmbed) {
+                    // 埋め込みモード
+                    return `
+                        <div class="video-preview">
+                            <iframe src="https://www.youtube.com/embed/${item.youtubeId}?controls=1" frameborder="0"
+                                allowfullscreen title="${item.title}"></iframe>
                         </div>
-                    </div>
-                </a>
-            `,
+                    `;
+                } else {
+                    // サムネイル+外部リンクモード
+                    return `
+                        <a href="https://www.youtube.com/watch?v=${item.youtubeId}" class="ref-card-link" target="_blank">
+                            <div class="video-preview thumbnail-mode">
+                                <img src="https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg" alt="${item.title}" class="ref-thumb">
+                                <div class="play-overlay">
+                                    <span class="play-icon">▶</span>
+                                    <span class="play-text">PLAY ON YOUTUBE (EXTERNAL)</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }
+            },
             gallery: (item) => `
                 <div class="gallery-item">
                     <img src="${item.url}" alt="${item.title}" loading="lazy">
@@ -79,19 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         container.innerHTML = items.map(item => {
             const media = UI.templates[type] ? UI.templates[type](item) : '';
-            if (type === 'connect') return media;
-            if (type === 'gallery') return media;
+            if (type === 'connect' || type === 'gallery') return media;
 
-            const className = type === 'sound' ? 'sound-item' : (type === 'video' || type === 'reference') ? 'work-card' : 'generic-item';
-
-            if (type === 'reference') {
-                return `
-                    <div class="${className}">
-                        ${UI.meta(item)}
-                        ${media}
-                    </div>
-                `;
-            }
+            const className = type === 'sound' ? 'sound-item' : (type === 'youtube') ? 'work-card' : 'generic-item';
 
             return `<div class="${className}">${UI.meta(item)}${media}</div>`;
         }).join('');
@@ -186,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = this.getAttribute('href');
             const target = document.querySelector(href);
             if (target) {
-                // 折りたたみセクション（Gallery, References, Activities）の場合は展開する
                 if (target.classList.contains('collapsible')) {
                     target.classList.remove('collapsed');
                 }

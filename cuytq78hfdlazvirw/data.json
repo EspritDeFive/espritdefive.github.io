@@ -66,11 +66,41 @@
     ],
     "references": [
         {
-            "title": "Dream Theater Illumination Theory",
-            "desc": "",
-            "youtubeId": "P80orOc1dg4",
-            "tag": "かわかみ"
+            "title": "Dream Theater / Metropolis Pt.1",
+            "desc": "ドリムシの中で一番最初に衝撃を受けた曲",
+            "youtubeId": "pEkWYrmk7OA",
+            "tag": "かわかみ",
+            "canEmbed": false
         }
     ],
-    "activities": []
+    "activities": [
+        {
+            "title": "Dream Theater / Illumination Theory",
+            "desc": "Gt. kohei ishino, Ba. シンゴ, Dr. やすき, Key. かわかみ",
+            "youtubeId": "P80orOc1dg4",
+            "tag": "コピーバンド",
+            "canEmbed": false
+        },
+        {
+            "title": "Dream Theater / Six Degrees of Inner Turbulence",
+            "desc": "Gt. kohei ishino, Ba. シンゴ, Dr. やすき, Key. かわかみ",
+            "youtubeId": "v4FVfM48-sA",
+            "tag": "コピーバンド",
+            "canEmbed": true
+        },
+        {
+            "title": "Dream Theater / Illumination Theory Bass & Gt",
+            "desc": "Gt. kohei ishino, Ba. シンゴ",
+            "youtubeId": "OvAmHMWA0vo",
+            "tag": "弾いてみた",
+            "canEmbed": false
+        },
+        {
+            "title": "Omoinotake / 幾億光年 Covered By クミコ",
+            "desc": "Gt/Arrange. kohei ishino, Produce. かわかみ",
+            "youtubeId": "dEAGiluuu34",
+            "tag": "別プロジェクト・黒樹会",
+            "canEmbed": true
+        }
+    ]
 }
