@@ -30,8 +30,27 @@ body {
     color: var(--gta-white);
     font-family: var(--font-body);
     overflow-x: hidden;
+    overflow-y: auto;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green-bright);
 }
 
 /* Cinematic Grain - Removed as per user request */
@@ -167,7 +186,7 @@ nav a:hover {
 
 /* Global Section Container */
 .section-container {
-    padding: 40px;
+    padding: 25px 40px;
     position: relative;
     background: #000;
 }
@@ -182,7 +201,7 @@ nav a:hover {
     font-weight: 900;
     letter-spacing: 0.5em;
     color: var(--accent-green-bright);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
@@ -736,12 +755,12 @@ footer {
 
 @media (max-width: 768px) {
     .section-container {
-        padding: 40px 25px;
+        padding: 20px 25px;
     }
 
     .section-title {
         font-size: 0.8rem;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
     }
 
     .hero-logo-large {
@@ -768,10 +787,43 @@ footer {
     }
 
     footer {
-        padding: 30px 25px;
+        padding: 25px;
     }
 
     .footer-logo {
         font-size: 1.4rem;
     }
+}
+
+/* Collapsible Section (References) */
+.collapsible .toggle-trigger {
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible .toggle-icon {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--accent-green-bright);
+    transition: transform 0.4s var(--anim-smooth);
+}
+
+.collapsible:not(.collapsed) .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.collapsible-content {
+    max-height: 5000px;
+    /* 十分な高さ */
+    opacity: 1;
+    overflow: hidden;
+    transition: all 0.6s var(--anim-smooth);
+}
+
+.collapsible.collapsed .collapsible-content {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
 }

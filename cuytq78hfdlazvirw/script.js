@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderSection('gallery-grid', data.gallery, 'gallery');
             renderSection('connect-list', data.connect, 'connect');
             renderSection('references-list', data.references, 'reference');
+            renderSection('activities-list', data.activities); // New activities section
         })
         .catch(err => console.error('Error loading data:', err));
 
@@ -78,16 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         container.innerHTML = items.map(item => {
             const media = UI.templates[type] ? UI.templates[type](item) : '';
-            if (type === 'connect') return media; // Connect links are the items themselves
-            if (type === 'gallery') return media; // Gallery items are specialized
+            if (type === 'connect') return media;
+            if (type === 'gallery') return media;
 
             const className = type === 'sound' ? 'sound-item' : (type === 'video' || type === 'reference') ? 'work-card' : 'generic-item';
-            // References use common card structure but contents vary
-            const content = type === 'reference' ? media : UI.meta(item) + media;
 
-            // Special handling for reference to include meta back in if needed?
-            // Actually, for reference, user might want meta inside or outside the link.
-            // Let's stick to the consistent card pattern.
             if (type === 'reference') {
                 return `
                     <div class="${className}">
@@ -183,12 +179,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // === 6. Smooth Scroll ===
+    // === 6. Smooth Scroll & Section Auto-Expand ===
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            if (target) {
+                // 折りたたみセクション（Gallery, References, Activities）の場合は展開する
+                if (target.classList.contains('collapsible')) {
+                    target.classList.remove('collapsed');
+                }
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
+    });
+
+    // === 7. Collapsible Section Toggle ===
+    document.querySelectorAll('.collapsible').forEach(section => {
+        const trigger = section.querySelector('.toggle-trigger');
+        if (trigger) {
+            trigger.addEventListener('click', () => {
+                section.classList.toggle('collapsed');
+            });
+        }
     });
 });
