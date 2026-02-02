@@ -36,20 +36,20 @@
             "date": "2025.10.11",
             "title": "GGG 2025",
             "tag": "Done",
-            "desc": "Live performance at local venue."
+            "desc": "コピーバンドイベント"
         }
     ],
     "sounds": [
         {
             "date": "2025.10.11",
-            "title": "Automatic",
+            "title": "宇多田ヒカル / Automatic アレンジ",
             "url": "https://soundcloud.com/esprit-de-five/automatic-cover-live",
             "tag": "Live",
             "desc": "GGG2025"
         },
         {
             "date": "2025.10.11",
-            "title": "Pretender",
+            "title": "Official髭男dism / Pretender アレンジ",
             "url": "https://soundcloud.com/esprit-de-five/pretender",
             "tag": "Live",
             "desc": "GGG2025"
@@ -71,6 +71,13 @@
             "youtubeId": "pEkWYrmk7OA",
             "tag": "かわかみ",
             "canEmbed": false
+        },
+        {
+            "title": "サカナクション / ミュージック",
+            "desc": "聴く時期によって聴こえてくる音が変わる気がする曲",
+            "youtubeId": "z2TNnnQbGJs",
+            "tag": "かわかみ",
+            "canEmbed": true
         }
     ],
     "activities": [
@@ -100,6 +107,13 @@
             "desc": "Gt/Arrange. kohei ishino, Produce. かわかみ",
             "youtubeId": "dEAGiluuu34",
             "tag": "別プロジェクト・黒樹会",
+            "canEmbed": true
+        },
+        {
+            "title": "僕らのゲーム音楽",
+            "desc": "Gt. kohei ishino, Ba. シンゴ, Key. かわかみ",
+            "youtubeId": "3LqU9ilCzSE",
+            "tag": "コピーバンド・ライブ切り抜き",
             "canEmbed": true
         }
     ]
