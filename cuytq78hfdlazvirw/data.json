@@ -2,33 +2,41 @@
     "members": [
         {
             "id": "01",
-            "name": "player alpha",
+            "name": "ひびくみ",
             "role": "Vocal",
-            "detail": "ここにボーカルとしての詳細なプロフィールやメッセージを記載します。5つの感性が交差する中心。"
+            "detail": "ここにボーカルとしての詳細なプロフィールやメッセージを記載します。"
         },
         {
             "id": "02",
-            "name": "Player Beta",
+            "name": "kohei ishino",
             "role": "Guitar",
-            "detail": "ギター担当。鋭いカッティングと空間を支配するエフェクトで、唯一無二のサウンドスケープを描く。"
+            "detail": "ここにギターとしての詳細なプロフィールやメッセージを記載します。"
         },
         {
             "id": "03",
-            "name": "Player Gamma",
+            "name": "一等兵",
             "role": "Bass",
-            "detail": "ベース担当。アンサンブルの屋台骨として、重厚なグルーヴと理論に裏打ちされたフレージングを提供。"
+            "detail": "ここにベースとしての詳細なプロフィールやメッセージを記載します。"
         },
         {
             "id": "04",
-            "name": "Player Delta",
+            "name": "やすき",
             "role": "Drums",
-            "detail": "ドラム担当。変拍子を自在に操る技巧派。カオスの中にある秩序をリズムで表現する。"
+            "detail": "ここにドラムとしての詳細なプロフィールやメッセージを記載します。"
         },
         {
             "id": "05",
-            "name": "Player Epsilon",
+            "name": "かわかみ",
             "role": "Keyboard",
-            "detail": "キーボード担当。クラシックからエレクトロまで精通し、バンドの音に多彩な色彩を加える。"
+            "detail": "ここにキーボードとしての詳細なプロフィールやメッセージを記載します。"
+        }
+    ],
+    "live": [
+        {
+            "date": "2025.10.11",
+            "title": "GGG 2025",
+            "tag": "Done",
+            "desc": "Live performance at local venue."
         }
     ],
     "sounds": [
@@ -47,13 +55,16 @@
             "desc": "GGG2025"
         }
     ],
-    "works": [
+    "videos": [],
+    "works": [],
+    "gallery": [],
+    "connect": [],
+    "references": [
         {
-            "date": "2026.01.31",
-            "title": "First Impulse",
-            "desc": "Live at Perception. Multi-angle cinematic capture.",
-            "youtubeId": "3LqU9ilCzSE",
-            "tag": "Live"
+            "title": "Dream Theater Illumination Theory",
+            "desc": "",
+            "youtubeId": "P80orOc1dg4",
+            "tag": "河上"
         }
     ]
 }

@@ -4,14 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             renderMembers(data.members);
+            renderLive(data.live);
             renderSounds(data.sounds);
+            renderVideos(data.videos);
             renderWorks(data.works);
+            renderGallery(data.gallery);
+            renderConnect(data.connect);
+            renderReferences(data.references);
         })
         .catch(err => console.error('Error loading data:', err));
 
+    const COMING_SOON = '<p class="coming-soon">Coming Soon</p>';
+
     function renderSounds(sounds) {
         const container = document.getElementById('sounds-list');
-        if (!container || !sounds) return;
+        if (!container) return;
+        if (!sounds || sounds.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
         container.innerHTML = sounds.map(s => `
             <div class="sound-item">
                 <div class="item-meta">
@@ -34,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderMembers(members) {
         const container = document.getElementById('member-list');
         if (!container) return;
+        if (!members || members.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
         container.innerHTML = members.map(m => `
             <div class="member-vertical-card" data-id="${m.id}">
                 <div class="member-card-header">
@@ -64,26 +79,114 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function renderWorks(works) {
-        const container = document.getElementById('works-grid');
+    function renderVideos(videos) {
+        const container = document.getElementById('videos-grid');
         if (!container) return;
-        container.innerHTML = works.map(w => `
+        if (!videos || videos.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
+        container.innerHTML = videos.map(v => `
             <div class="work-card">
                 <div class="item-meta">
                     <div class="meta-header">
-                        ${w.tag ? `<span class="tag">${w.tag}</span>` : ''}
-                        <span class="label">${w.date}</span>
+                        ${v.tag ? `<span class="tag">${v.tag}</span>` : ''}
+                        <span class="label">${v.date}</span>
                     </div>
-                    <h4 class="item-title">${w.title}</h4>
-                    ${w.desc ? `<p class="item-desc">${w.desc}</p>` : ''}
+                    <h4 class="item-title">${v.title}</h4>
+                    ${v.desc ? `<p class="item-desc">${v.desc}</p>` : ''}
                 </div>
                 <div class="video-preview">
-                    <iframe src="https://www.youtube.com/embed/${w.youtubeId}?controls=0" frameborder="0"
-                        allowfullscreen title="${w.title}"></iframe>
+                    <iframe src="https://www.youtube.com/embed/${v.youtubeId}?controls=0" frameborder="0"
+                        allowfullscreen title="${v.title}"></iframe>
                 </div>
             </div>
         `).join('');
     }
+
+    // --- Generic Template for Live, Works ---
+    function renderGenericList(id, items) {
+        const container = document.getElementById(id);
+        if (!container) return;
+        if (!items || items.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
+        container.innerHTML = items.map(item => `
+            <div class="generic-item">
+                <div class="item-meta">
+                    <div class="meta-header">
+                        ${item.tag ? `<span class="tag">${item.tag}</span>` : ''}
+                        ${item.date ? `<span class="label">${item.date}</span>` : ''}
+                    </div>
+                    <h4 class="item-title">${item.title}</h4>
+                    ${item.desc ? `<p class="item-desc">${item.desc}</p>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function renderLive(live) { renderGenericList('live-list', live); }
+    function renderWorks(works) { renderGenericList('works-list', works); }
+
+    function renderGallery(gallery) {
+        const container = document.getElementById('gallery-grid');
+        if (!container) return;
+        if (!gallery || gallery.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
+        container.innerHTML = gallery.map(g => `
+            <div class="gallery-item">
+                <img src="${g.url}" alt="${g.title}" loading="lazy">
+                <div class="gallery-caption">${g.title}</div>
+            </div>
+        `).join('');
+    }
+
+    function renderConnect(connect) {
+        const container = document.getElementById('connect-list');
+        if (!container) return;
+        if (!connect || connect.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
+        container.innerHTML = connect.map(c => `
+            <a href="${c.url}" class="connect-link" target="_blank">
+                <span class="platform">${c.platform}</span>
+                <span class="arrow">→</span>
+            </a>
+        `).join('');
+    }
+
+    function renderReferences(refs) {
+        const container = document.getElementById('references-list');
+        if (!container) return;
+        if (!refs || refs.length === 0) {
+            container.innerHTML = COMING_SOON;
+            return;
+        }
+        container.innerHTML = refs.map(r => `
+            <a href="https://www.youtube.com/watch?v=${r.youtubeId}" class="work-card ref-card-link" target="_blank">
+                <div class="item-meta">
+                    <div class="meta-header">
+                        ${r.tag ? `<span class="tag">${r.tag}</span>` : ''}
+                        <span class="label">External Link</span>
+                    </div>
+                    <h4 class="item-title">${r.title}</h4>
+                    ${r.desc ? `<p class="item-desc">${r.desc}</p>` : ''}
+                </div>
+                <div class="video-preview thumbnail-mode">
+                    <img src="https://img.youtube.com/vi/${r.youtubeId}/maxresdefault.jpg" alt="${r.title}" class="ref-thumb">
+                    <div class="play-overlay">
+                        <span class="play-icon">▶</span>
+                        <span class="play-text">WATCH ON YOUTUBE</span>
+                    </div>
+                </div>
+            </a>
+        `).join('');
+    }
+
 
     // === 2. Concept Poster Parallax ===
     const conceptPoster = document.querySelector('.concept-poster');

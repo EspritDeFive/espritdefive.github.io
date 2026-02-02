@@ -429,6 +429,16 @@ nav a:hover {
     max-width: 90%;
 }
 
+.coming-soon {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    padding: 20px 0;
+    font-style: italic;
+}
+
 .sc-cropper {
     width: 100%;
     height: 120px;
@@ -457,9 +467,11 @@ nav a:hover {
     filter: invert(1) grayscale(1) brightness(1.4) contrast(1.2);
 }
 
-/* Works / Videos */
+/* Grid & List Layouts */
 .works-grid,
-.sounds-list {
+.sounds-list,
+.live-list,
+.works-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -467,7 +479,8 @@ nav a:hover {
 }
 
 .work-card,
-.sound-item {
+.sound-item,
+.generic-item {
     border: none;
     background: transparent;
 }
@@ -481,6 +494,61 @@ nav a:hover {
     overflow: hidden;
     border: none;
     /* 枠線を削除 */
+}
+
+.video-preview.thumbnail-mode {
+    cursor: pointer;
+    background: #111;
+}
+
+.ref-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: all 0.4s var(--anim-smooth);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.8;
+    transition: all 0.4s var(--anim-smooth);
+    pointer-events: none;
+}
+
+.play-icon {
+    font-size: 2.5rem;
+    color: var(--gta-white);
+}
+
+.play-text {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--gta-white);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+}
+
+.ref-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.ref-card-link:hover .ref-thumb {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.ref-card-link:hover .play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .video-preview iframe {
@@ -501,9 +569,94 @@ nav a:hover {
     opacity: 1;
 }
 
-.work-footer-info {
-    padding-top: 5px;
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: #111;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) brightness(0.7);
+    transition: all 0.5s var(--anim-smooth);
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    width: 100%;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+/* Connect & References */
+.connect-list,
+.references-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.connect-link,
+.ref-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.connect-link:hover,
+.ref-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent-green);
+    padding-left: 25px;
+}
+
+.platform,
+.ref-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gta-white);
+}
+
+.ref-url {
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.arrow {
+    color: var(--accent-green);
+    font-weight: 900;
+}
+
 
 /* Footer */
 footer {
@@ -530,7 +683,10 @@ footer {
 
     .concept-grid,
     .members-split-layout,
-    .sounds-list {
+    .sounds-list,
+    .live-list,
+    .works-list,
+    .works-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
