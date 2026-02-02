@@ -199,7 +199,7 @@ nav a:hover {
 .concept-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 50px;
     align-items: center;
 }
 
@@ -217,16 +217,8 @@ nav a:hover {
     filter: contrast(1.05);
 }
 
-.concept-poster.full-size {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    transform: none !important;
-}
-
 .concept-text-main {
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
     font-weight: 700;
     line-height: 1.6;
 }
@@ -251,7 +243,7 @@ nav a:hover {
 .members-split-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 50px;
     align-items: start;
 }
 
@@ -267,7 +259,6 @@ nav a:hover {
     padding: 15px 25px;
     display: flex;
     flex-direction: column;
-    /* 詳細を下に出すためcolumnに変更 */
     align-items: flex-start;
     gap: 10px;
     transition: all 0.4s var(--anim-smooth);
@@ -298,22 +289,17 @@ nav a:hover {
 
 .member-vertical-card.active .member-toggle {
     transform: rotate(45deg);
-    /* プラスを×（またはマイナス風）に回転 */
     color: var(--gta-white);
 }
 
 .member-vertical-card:hover {
-    background: rgba(26, 77, 46, 0.2);
-    /* 暗めの緑を背景に */
-    transform: translateX(10px);
+    background: rgba(26, 77, 46, 0.15);
     border-left-color: var(--accent-green-bright);
 }
 
 .member-vertical-card.active {
-    background: rgba(26, 77, 46, 0.3);
+    background: rgba(26, 77, 46, 0.2);
     border-left-color: var(--accent-green-bright);
-    cursor: default;
-    /* 開いた後はクリック操作を標準に */
 }
 
 /* 詳細部分のスタイル */
@@ -325,12 +311,11 @@ nav a:hover {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.7);
     padding-left: 55px;
-    /* 数字とラベル分をオフセット */
     pointer-events: none;
 }
 
 .member-vertical-card.active .member-detail {
-    max-height: 200px;
+    max-height: 500px;
     opacity: 1;
     margin-top: 15px;
     padding-bottom: 5px;
@@ -338,7 +323,6 @@ nav a:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 15px;
 }
-
 
 .member-vertical-card .num {
     font-size: 1.2rem;
@@ -400,7 +384,6 @@ nav a:hover {
     padding: 3px 10px;
     background: var(--accent-green);
     color: var(--gta-white);
-    border-radius: 0px;
 }
 
 .label {
@@ -413,7 +396,6 @@ nav a:hover {
 
 .item-title {
     font-size: 1.6rem;
-    /* はっきり大きく */
     font-weight: 900;
     font-family: var(--font-heading);
     color: var(--gta-white);
@@ -443,7 +425,6 @@ nav a:hover {
     width: 100%;
     height: 120px;
     overflow: hidden;
-    /* 四隅のゴミをカット */
     position: relative;
     background: #000;
 }
@@ -453,12 +434,9 @@ nav a:hover {
     top: -1px;
     left: -1px;
     width: calc(100% + 2px);
-    /* 1px分外側に広げる */
     height: calc(120px + 2px);
     border: none;
     outline: none;
-    box-shadow: none;
-    /* SoundCloudの白背景を黒に反転 */
     filter: invert(1) grayscale(1) brightness(1) contrast(1.2);
     transition: all 0.4s var(--anim-smooth);
 }
@@ -474,8 +452,7 @@ nav a:hover {
 .works-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    /* 余白を広げて密度感を出す */
+    gap: 40px;
 }
 
 .work-card,
@@ -485,7 +462,6 @@ nav a:hover {
     background: transparent;
 }
 
-
 .video-preview {
     width: 100%;
     aspect-ratio: 16/9;
@@ -493,7 +469,6 @@ nav a:hover {
     position: relative;
     overflow: hidden;
     border: none;
-    /* 枠線を削除 */
 }
 
 .video-preview.thumbnail-mode {
@@ -556,12 +531,9 @@ nav a:hover {
     top: -1px;
     left: -1px;
     width: calc(100% + 2px);
-    /* 1px分外側に広げる */
     height: calc(100% + 2px);
     opacity: 0.6;
     border: none;
-    outline: none;
-    box-shadow: none;
     transition: opacity 0.4s ease;
 }
 
@@ -625,18 +597,18 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px 25px;
     background: rgba(255, 255, 255, 0.02);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--accent-green);
     text-decoration: none;
-    transition: 0.3s;
+    color: var(--gta-white);
+    transition: all 0.4s var(--anim-smooth);
 }
 
 .connect-link:hover,
 .ref-link:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 3px solid var(--accent-green);
-    padding-left: 25px;
+    background: rgba(26, 77, 46, 0.15);
+    border-left-color: var(--accent-green-bright);
 }
 
 .platform,
@@ -656,7 +628,6 @@ nav a:hover {
     color: var(--accent-green);
     font-weight: 900;
 }
-
 
 /* Footer */
 footer {
@@ -695,8 +666,112 @@ footer {
         position: static;
         order: -1;
     }
+}
 
-    .works-grid {
-        grid-template-columns: 1fr;
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gta-white);
+    transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s var(--anim-smooth);
+        z-index: 2000;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 35px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 1.3rem;
+        opacity: 0.8;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        padding: 40px 25px;
+    }
+
+    .section-title {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-logo-large {
+        width: 180px;
+    }
+
+    .concept-text-main {
+        font-size: 1.1rem;
+    }
+
+    .members-poster,
+    .concept-poster {
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .item-title {
+        font-size: 1.3rem;
+    }
+
+    .item-desc {
+        font-size: 0.75rem;
+    }
+
+    footer {
+        padding: 30px 25px;
+    }
+
+    .footer-logo {
+        font-size: 1.4rem;
     }
 }

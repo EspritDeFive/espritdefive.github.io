@@ -14,7 +14,7 @@
         },
         {
             "id": "03",
-            "name": "一等兵",
+            "name": "シンゴ",
             "role": "Bass",
             "detail": "ここにベースとしての詳細なプロフィールやメッセージを記載します。"
         },
@@ -58,13 +58,18 @@
     "videos": [],
     "works": [],
     "gallery": [],
-    "connect": [],
+    "connect": [
+        {
+            "platform": "SoundCloud",
+            "url": "https://soundcloud.com/esprit-de-five"
+        }
+    ],
     "references": [
         {
             "title": "Dream Theater Illumination Theory",
             "desc": "",
             "youtubeId": "P80orOc1dg4",
-            "tag": "河上"
+            "tag": "かわかみ"
         }
     ]
 }
