@@ -201,11 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === 7. Collapsible Section Toggle ===
     document.querySelectorAll('.collapsible').forEach(section => {
-        const trigger = section.querySelector('.toggle-trigger');
-        if (trigger) {
+        section.querySelectorAll('.toggle-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
                 section.classList.toggle('collapsed');
             });
-        }
+        });
     });
 });

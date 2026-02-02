@@ -214,6 +214,22 @@ nav a:hover {
     margin-left: 20px;
 }
 
+.section-desc {
+    color: var(--gta-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .section-desc {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+}
+
 /* Concept */
 .concept-grid {
     display: grid;
