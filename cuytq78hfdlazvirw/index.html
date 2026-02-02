@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPRIT DE FIVE | 5つの異なる感性を、同時に鳴らす。</title>
+    <meta name="description" content="Esprit De Five Official Website. Inspired by Rockstar Games & Inception.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div class="noise-overlay"></div>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo-container">
+                <img src="../source/icon_transparent.webp" alt="ESPRIT DE FIVE" class="main-logo">
+                <span class="logo-text">Esprit De Five</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#members">Five</a></li>
+                    <li><a href="#works">Works</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" style="background-image: url('../source/header_001.webp');">
+            <div class="hero-center title-overlay">
+                <img src="../source/icon_transparent.webp" alt="ESPRIT DE FIVE" class="hero-logo-large">
+            </div>
+            <div class="scroll-down">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Concept: Inception Depth -->
+        <section id="concept" class="section-container">
+            <div class="content-wrapper">
+                <h2 class="section-title">Concept</h2>
+                <div class="concept-grid">
+                    <div class="concept-visual">
+                        <img src="../source/poster2.jpg" alt="Esprit De Five Poster" class="concept-poster full-size">
+                    </div>
+                    <div class="concept-text-main">
+                        <p class="reveal-text">中心を置かない。</p>
+                        <p class="reveal-text">誰一人として従わない。</p>
+                        <p class="reveal-text">個々の純粋な音楽性が、衝突し、共鳴し、均衡を保つ。</p>
+                        <p class="reveal-text highlight">それは支配ではなく、ひとつの「現象」である。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Members: Vertical List & Poster Side-by-Side -->
+        <section id="members" class="section-container">
+            <div class="content-wrapper">
+                <h2 class="section-title">The Five</h2>
+                <div class="members-split-layout">
+                    <div id="member-list" class="member-list-side">
+                        <!-- JSONより動的に生成 -->
+                    </div>
+                    <div class="member-visual-side">
+                        <img src="../source/poster1.jpg" alt="Esprit De Five Poster 1" class="members-poster">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works -->
+        <section id="works" class="section-container">
+            <div class="content-wrapper">
+                <h2 class="section-title">Works</h2>
+                <div id="works-grid" class="works-grid">
+                    <!-- JSONより動的に生成 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">Esprit De Five</div>
+            <p class="copyright">&copy; 2026 ESPRIT DE FIVE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+/* 
+  Esprit De Five - GTA & Inception Hybrid Design
+  Theme: Black, White, and Dark Green
+*/
+
+:root {
+    --bg-black: #000000;
+    --gta-white: #ffffff;
+    --accent-green: #1a4d2e;
+    /* 暗めの緑 */
+    --accent-green-bright: #2e7d32;
+    /* 少し明るめの緑（ホバー用など） */
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --border-thick: 6px solid #000;
+    --border-thin: 1px solid rgba(255, 255, 255, 0.1);
+    --anim-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--gta-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Cinematic Grain - Removed as per user request */
+.noise-overlay {
+    display: none;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.header-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    /* 余白を25pxに拡大 */
+}
+
+.main-logo {
+    height: 40px;
+    /* 少し小さくしてバランスを調整 */
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    color: var(--gta-white);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: var(--gta-white);
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-center {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.hero-logo-large {
+    width: clamp(280px, 50vw, 600px);
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.8));
+    animation: none;
+}
+
+/* Mouse Scroll Icon */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    background: var(--gta-white);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    border-radius: 2px;
+    animation: scrollMove 2s infinite;
+}
+
+@keyframes scrollMove {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* Global Section Container */
+.section-container {
+    padding: 40px;
+    position: relative;
+    background: #000;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.5em;
+    color: var(--accent-green-bright);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, var(--accent-green), transparent);
+    margin-left: 20px;
+}
+
+/* Concept */
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.concept-visual {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+}
+
+.concept-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: contrast(1.05);
+}
+
+.concept-poster.full-size {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transform: none !important;
+}
+
+.concept-text-main {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.reveal-text {
+    opacity: 0.1;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.reveal-text.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.highlight {
+    color: #fff;
+    text-shadow: 0 0 20px var(--accent-green);
+}
+
+/* Members */
+.members-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.member-list-side {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.member-vertical-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 4px solid var(--accent-green);
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    /* 詳細を下に出すためcolumnに変更 */
+    align-items: flex-start;
+    gap: 10px;
+    transition: all 0.4s var(--anim-smooth);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.member-card-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    position: relative;
+}
+
+.member-toggle {
+    margin-left: auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--accent-green-bright);
+    transition: transform 0.4s var(--anim-smooth), opacity 0.3s;
+    opacity: 0.5;
+}
+
+.member-vertical-card:hover .member-toggle {
+    opacity: 1;
+}
+
+.member-vertical-card.active .member-toggle {
+    transform: rotate(45deg);
+    /* プラスを×（またはマイナス風）に回転 */
+    color: var(--gta-white);
+}
+
+.member-vertical-card:hover {
+    background: rgba(26, 77, 46, 0.2);
+    /* 暗めの緑を背景に */
+    transform: translateX(10px);
+    border-left-color: var(--accent-green-bright);
+}
+
+.member-vertical-card.active {
+    background: rgba(26, 77, 46, 0.3);
+    border-left-color: var(--accent-green-bright);
+    cursor: default;
+    /* 開いた後はクリック操作を標準に */
+}
+
+/* 詳細部分のスタイル */
+.member-detail {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s var(--anim-smooth);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    padding-left: 55px;
+    /* 数字とラベル分をオフセット */
+    pointer-events: none;
+}
+
+.member-vertical-card.active .member-detail {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    pointer-events: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+
+.member-vertical-card .num {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--accent-green-bright);
+    opacity: 0.6;
+}
+
+.m-info h3 {
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    margin-bottom: 2px;
+}
+
+.m-info p {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.member-vertical-card:hover .m-info p {
+    color: var(--accent-green-bright);
+}
+
+.member-visual-side {
+    position: sticky;
+    top: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.members-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Works */
+.works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.work-card {
+    border: var(--border-thin);
+    background: #050505;
+    transition: border-color 0.3s;
+}
+
+.work-card:hover {
+    border-color: var(--accent-green);
+}
+
+.video-preview {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-preview iframe {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.work-card:hover iframe {
+    opacity: 1;
+}
+
+.work-meta {
+    padding: 20px;
+}
+
+.label {
+    font-size: 0.7rem;
+    color: var(--accent-green-bright);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-family: var(--font-heading);
+}
+
+/* Footer */
+footer {
+    padding: 60px 40px;
+    text-align: center;
+    border-top: 2px solid var(--accent-green);
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--gta-white);
+}
+
+.copyright {
+    font-size: 0.65rem;
+    opacity: 0.4;
+    letter-spacing: 0.3em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .concept-grid,
+    .members-split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .member-visual-side {
+        position: static;
+        order: -1;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+}

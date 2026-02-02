@@ -1,0 +1,48 @@
+{
+    "members": [
+        {
+            "id": "01",
+            "name": "player alpha",
+            "role": "Vocal",
+            "detail": "ここにボーカルとしての詳細なプロフィールやメッセージを記載します。5つの感性が交差する中心。"
+        },
+        {
+            "id": "02",
+            "name": "Player Beta",
+            "role": "Guitar",
+            "detail": "ギター担当。鋭いカッティングと空間を支配するエフェクトで、唯一無二のサウンドスケープを描く。"
+        },
+        {
+            "id": "03",
+            "name": "Player Gamma",
+            "role": "Bass",
+            "detail": "ベース担当。アンサンブルの屋台骨として、重厚なグルーヴと理論に裏打ちされたフレージングを提供。"
+        },
+        {
+            "id": "04",
+            "name": "Player Delta",
+            "role": "Drums",
+            "detail": "ドラム担当。変拍子を自在に操る技巧派。カオスの中にある秩序をリズムで表現する。"
+        },
+        {
+            "id": "05",
+            "name": "Player Epsilon",
+            "role": "Keyboard",
+            "detail": "キーボード担当。クラシックからエレクトロまで精通し、バンドの音に多彩な色彩を加える。"
+        }
+    ],
+    "works": [
+        {
+            "date": "2026.01.15",
+            "title": "First Impulse",
+            "desc": "Live at Perception",
+            "youtubeId": "3LqU9ilCzSE"
+        },
+        {
+            "date": "2026.02.01",
+            "title": "Resonance",
+            "desc": "Official Visualizer",
+            "youtubeId": "dQw4w9WgXcQ"
+        }
+    ]
+}
