@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         gallery: (item) => `
             <div class="gallery-item">
-                <img src="${item.url}" alt="${item.title}" loading="lazy">
+                <img src="assets/gallery/${item.url}" alt="${item.title}" loading="lazy">
                 <div class="gallery-caption">${item.title}</div>
             </div>
         `,

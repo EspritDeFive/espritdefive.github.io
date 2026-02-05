@@ -10,7 +10,7 @@
             "id": "02",
             "name": "kohei ishino",
             "role": "Guitar",
-            "detail": "ここにギターとしての詳細なプロフィールやメッセージを記載します。"
+            "detail": "基本的に趣味や興味は「広く浅く」がモットー。しかしどうやら音楽に関しては広く「深く」なりたいという欲求があるようだ。\nそれはあくまで欲求で現実がそうとは限らない。実際、音楽に関してかなりの偏食を指摘されがちだ。"
         },
         {
             "id": "03",
@@ -34,9 +34,21 @@
     "live": [
         {
             "date": "2025.10.11",
-            "title": "GGG 2025",
+            "title": "GGG 2025 Day.1",
             "tag": "Done",
-            "desc": "コピーバンドイベント"
+            "desc": "コピーバンドイベント @Zirco Tokyo"
+        },
+        {
+            "date": "2025.8.30",
+            "title": "Esprit De Live Vol.1",
+            "tag": "Done",
+            "desc": "kohei ishino主催ライブ @アイミュージックバー"
+        },
+        {
+            "date": "2024.5.12",
+            "title": "わるあがき Vol.1",
+            "tag": "Done",
+            "desc": "@下北沢ろくでもない夜"
         }
     ],
     "sounds": [
@@ -57,7 +69,20 @@
     ],
     "videos": [],
     "works": [],
-    "gallery": [],
+    "gallery": [
+        {
+            "url": "196953_0.jpg",
+            "title": "ライブの様子"
+        },
+        {
+            "url": "196954_0.jpg",
+            "title": "ライブの様子"
+        },
+        {
+            "url": "196955_0.jpg",
+            "title": "ライブの様子"
+        }
+    ],
     "connect": [
         {
             "platform": "SoundCloud",
@@ -77,6 +102,20 @@
             "desc": "泥臭さと孤独とカーテン越しの光みたいな希望を含んだ歌詞が沁みる10代を送っていました。要するに厨二です。",
             "youtubeId": "sKM6VFHmD_g",
             "tag": "ひびくみ",
+            "canEmbed": true
+        },
+        {
+            "title": "CNBLUE - You're so fine",
+            "desc": "決して酒に酔って聞いてはならない。\nそんなもったいないことはすべきでない。",
+            "youtubeId": "wAZJ_9D6lM4",
+            "tag": "kohei ishino",
+            "canEmbed": true
+        },
+        {
+            "title": "花澤香菜 - I love new day!",
+            "desc": "'day'が可算名詞であることなんてどうでも良くなる程の傑作。\n例えるならば鋭いキレのコーヒーと、滑らかなコクのミルクから成るカフェオレ。",
+            "youtubeId": "0HA8o8OH8OA",
+            "tag": "kohei ishino",
             "canEmbed": true
         },
         {
@@ -101,27 +140,6 @@
             "youtubeId": "_BPYJNcXT1U",
             "tag": "バンド",
             "canEmbed": true
-        },
-        {
-            "title": "Dream Theater / Illumination Theory",
-            "desc": "Gt. kohei ishino, Ba. シンゴ, Dr. やすき, Key. かわかみ",
-            "youtubeId": "P80orOc1dg4",
-            "tag": "コピーバンド",
-            "canEmbed": false
-        },
-        {
-            "title": "Dream Theater / Six Degrees of Inner Turbulence",
-            "desc": "Gt. kohei ishino, Ba. シンゴ, Dr. やすき, Key. かわかみ",
-            "youtubeId": "v4FVfM48-sA",
-            "tag": "コピーバンド",
-            "canEmbed": true
-        },
-        {
-            "title": "Dream Theater / Illumination Theory Bass & Gt",
-            "desc": "Gt. kohei ishino, Ba. シンゴ",
-            "youtubeId": "OvAmHMWA0vo",
-            "tag": "弾いてみた",
-            "canEmbed": false
         },
         {
             "title": "Omoinotake / 幾億光年 Covered By クミコ",
