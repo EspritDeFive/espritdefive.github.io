@@ -17,61 +17,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const COMING_SOON = '<p class="coming-soon">Coming Soon</p>';
 
-    // --- Core UI Components ---
-    const UI = {
-        meta: (item) => `
-            <div class="item-meta">
-                <div class="meta-header">
-                    ${item.tag ? `<span class="tag">${item.tag}</span>` : ''}
-                    ${item.date ? `<span class="label">${item.date}</span>` : ''}
-                </div>
-                <h4 class="item-title">${item.title}</h4>
-                ${item.desc ? `<p class="item-desc">${item.desc}</p>` : ''}
+    // --- Core UI Components (Refactored Strategy Pattern) ---
+    const renderMeta = (item) => `
+        <div class="item-meta">
+            <div class="meta-header">
+                ${item.tag ? `<span class="tag">${item.tag}</span>` : ''}
+                ${item.date ? `<span class="label">${item.date}</span>` : ''}
             </div>
-        `,
-        templates: {
-            sound: (item) => `
+            <h4 class="item-title">${item.title}</h4>
+            ${item.desc ? `<p class="item-desc">${item.desc}</p>` : ''}
+        </div>
+    `;
+
+    const RenderStrategies = {
+        sound: (item) => {
+            const media = `
                 <div class="sc-cropper">
                     <iframe class="sc-player" height="120" scrolling="no" frameborder="no" allow="autoplay" 
                         src="https://w.soundcloud.com/player/?url=${encodeURIComponent(item.url)}&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false">
                     </iframe>
                 </div>
-            `,
-            youtube: (item) => {
-                if (item.canEmbed) {
-                    return `
-                        <div class="video-preview">
-                            <iframe src="https://www.youtube.com/embed/${item.youtubeId}?controls=1" frameborder="0"
-                                allowfullscreen title="${item.title}"></iframe>
-                        </div>
-                    `;
-                } else {
-                    return `
-                        <a href="https://www.youtube.com/watch?v=${item.youtubeId}" class="ref-card-link" target="_blank">
-                            <div class="video-preview thumbnail-mode">
-                                <img src="https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg" alt="${item.title}" class="ref-thumb">
-                                <div class="play-overlay">
-                                    <span class="play-icon">▶</span>
-                                    <span class="play-text">PLAY ON YOUTUBE (EXTERNAL)</span>
-                                </div>
+            `;
+            return `<div class="sound-item">${renderMeta(item)}${media}</div>`;
+        },
+        youtube: (item) => {
+            let media;
+            if (item.canEmbed) {
+                media = `
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/${item.youtubeId}?controls=1" frameborder="0"
+                            allowfullscreen title="${item.title}"></iframe>
+                    </div>
+                `;
+            } else {
+                media = `
+                    <a href="https://www.youtube.com/watch?v=${item.youtubeId}" class="ref-card-link" target="_blank">
+                        <div class="video-preview thumbnail-mode">
+                            <img src="https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg" alt="${item.title}" class="ref-thumb">
+                            <div class="play-overlay">
+                                <span class="play-icon">▶</span>
+                                <span class="play-text">PLAY ON YOUTUBE (EXTERNAL)</span>
                             </div>
-                        </a>
-                    `;
-                }
-            },
-            gallery: (item) => `
-                <div class="gallery-item">
-                    <img src="${item.url}" alt="${item.title}" loading="lazy">
-                    <div class="gallery-caption">${item.title}</div>
-                </div>
-            `,
-            connect: (item) => `
-                <a href="${item.url}" class="connect-link" target="_blank">
-                    <span class="platform">${item.platform}</span>
-                    <span class="arrow">→</span>
-                </a>
-            `
-        }
+                        </div>
+                    </a>
+                `;
+            }
+            return `<div class="work-card">${renderMeta(item)}${media}</div>`;
+        },
+        gallery: (item) => `
+            <div class="gallery-item">
+                <img src="${item.url}" alt="${item.title}" loading="lazy">
+                <div class="gallery-caption">${item.title}</div>
+            </div>
+        `,
+        connect: (item) => `
+            <a href="${item.url}" class="common-link-card connect-link" target="_blank">
+                <span class="platform">${item.platform}</span>
+                <span class="arrow">→</span>
+            </a>
+        `,
+        generic: (item) => `<div class="generic-item">${renderMeta(item)}</div>`
     };
 
     function renderSection(containerId, items, type = 'generic') {
@@ -82,12 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        container.innerHTML = items.map(item => {
-            const media = UI.templates[type] ? UI.templates[type](item) : '';
-            if (type === 'connect' || type === 'gallery') return media;
-            const className = type === 'sound' ? 'sound-item' : (type === 'youtube') ? 'work-card' : 'generic-item';
-            return `<div class="${className}">${UI.meta(item)}${media}</div>`;
-        }).join('');
+        const strategy = RenderStrategies[type] || RenderStrategies.generic;
+        container.innerHTML = items.map(item => strategy(item)).join('');
     }
 
     function renderMembers(members) {
