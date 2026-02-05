@@ -340,20 +340,27 @@ nav a:hover {
     border-left-color: var(--accent-green-bright);
 }
 
-/* 詳細部分のスタイル */
+/* 詳細部分のスタイル - Gridを使用した高さアニメーション */
 .member-detail {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
     opacity: 0;
-    transition: all 0.5s var(--anim-smooth);
+    transition: grid-template-rows 0.6s var(--anim-smooth), opacity 0.4s ease, margin 0.6s var(--anim-smooth), padding 0.6s var(--anim-smooth);
     font-size: 0.9rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.7);
     padding-left: 55px;
     pointer-events: none;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+.member-detail-inner {
+    min-height: 0;
 }
 
 .member-vertical-card.active .member-detail {
-    max-height: 500px;
+    grid-template-rows: 1fr;
     opacity: 1;
     margin-top: 15px;
     padding-bottom: 5px;
@@ -447,6 +454,7 @@ nav a:hover {
     color: rgba(255, 255, 255, 0.4);
     line-height: 1.6;
     max-width: 90%;
+    white-space: pre-wrap;
 }
 
 .coming-soon {

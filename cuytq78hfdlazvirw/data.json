@@ -4,7 +4,7 @@
             "id": "01",
             "name": "ひびくみ",
             "role": "Vocal",
-            "detail": "ここにボーカルとしての詳細なプロフィールやメッセージを記載します。"
+            "detail": "幼少期から音楽に触れ、2018年よりシンガーとして活動開始。\n現在は東神奈川にあるライブ居酒屋でマンスリーライブを開催。"
         },
         {
             "id": "02",
@@ -28,7 +28,7 @@
             "id": "05",
             "name": "かわかみ",
             "role": "Keyboard",
-            "detail": "ここにキーボードとしての詳細なプロフィールやメッセージを記載します。"
+            "detail": "初めて触った鍵盤は25鍵のMIDIキーボード。アナログモデリングシンセが好き。"
         }
     ],
     "live": [
@@ -66,6 +66,20 @@
     ],
     "references": [
         {
+            "title": "THE BACK HORN / 風船",
+            "desc": "泥臭さと孤独とカーテン越しの光みたいな希望を含んだ歌詞が沁みる10代を送っていました。要するに厨二です。",
+            "youtubeId": "DKfZgjgfooU",
+            "tag": "ひびくみ",
+            "canEmbed": true
+        },
+        {
+            "title": "Syrup16g / ハピネス",
+            "desc": "泥臭さと孤独とカーテン越しの光みたいな希望を含んだ歌詞が沁みる10代を送っていました。要するに厨二です。",
+            "youtubeId": "sKM6VFHmD_g",
+            "tag": "ひびくみ",
+            "canEmbed": true
+        },
+        {
             "title": "Dream Theater / Metropolis Pt.1",
             "desc": "ドリムシの中で一番最初に衝撃を受けた曲",
             "youtubeId": "pEkWYrmk7OA",
@@ -81,6 +95,13 @@
         }
     ],
     "activities": [
+        {
+            "title": "ひびくみ / スカビオサの蕾",
+            "desc": "「殿様ガエル」というバンドで歌ってます。不倫相手を刺す曲です。",
+            "youtubeId": "_BPYJNcXT1U",
+            "tag": "バンド",
+            "canEmbed": true
+        },
         {
             "title": "Dream Theater / Illumination Theory",
             "desc": "Gt. kohei ishino, Ba. シンゴ, Dr. やすき, Key. かわかみ",

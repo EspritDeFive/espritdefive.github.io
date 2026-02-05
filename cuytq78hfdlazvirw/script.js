@@ -109,9 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="plus">+</span>
                     </div>
                 </div>
-                <div class="member-detail">
-                    ${m.detail}
-                </div>
+                <div class="member-detail"><div class="member-detail-inner">${m.detail}</div></div>
             </div>
         `).join('');
 
