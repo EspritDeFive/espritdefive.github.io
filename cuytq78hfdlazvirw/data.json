@@ -22,7 +22,7 @@
             "id": "04",
             "name": "やすき",
             "role": "Drums",
-            "detail": "ここにドラムとしての詳細なプロフィールやメッセージを記載します。"
+            "detail": "音楽的ルーツはあくまでポップスとしつつも、大学の軽音楽サークルであらゆるジャンルの音楽を雑多に吸収した結果、特定のジャンルに特化しすぎない現在のプレイスタイルを形成"
         },
         {
             "id": "05",
@@ -92,22 +92,22 @@
     "references": [
         {
             "title": "THE BACK HORN / 風船",
-            "desc": "泥臭さと孤独とカーテン越しの光みたいな希望を含んだ歌詞が沁みる10代を送っていました。要するに厨二です。",
+            "desc": "雨降る前の土臭さが画面越しにも伝わってきて非常に良い",
             "youtubeId": "DKfZgjgfooU",
             "tag": "ひびくみ",
             "canEmbed": true
         },
         {
             "title": "Syrup16g / ハピネス",
-            "desc": "泥臭さと孤独とカーテン越しの光みたいな希望を含んだ歌詞が沁みる10代を送っていました。要するに厨二です。",
+            "desc": "タイトルと歌詞がこんなにも相反してる作品は他にない(当社比)",
             "youtubeId": "sKM6VFHmD_g",
             "tag": "ひびくみ",
             "canEmbed": true
         },
         {
-            "title": "CNBLUE - You're so fine",
-            "desc": "決して酒に酔って聞いてはならない。\nそんなもったいないことはすべきでない。",
-            "youtubeId": "wAZJ_9D6lM4",
+            "title": "Wake Up, Girls! - 土曜日のフライト",
+            "desc": "ところどころで感じる、「彼女はもう脈無しだけどまだ可能性があると信じ込んでいる愚かな男」な雰囲気が良いです。分かる人には分かる。",
+            "youtubeId": "iV5lALTsMLQ",
             "tag": "kohei ishino",
             "canEmbed": true
         },
@@ -117,6 +117,20 @@
             "youtubeId": "0HA8o8OH8OA",
             "tag": "kohei ishino",
             "canEmbed": true
+        },
+        {
+            "title": "煙に白 / School Food Punishment",
+            "desc": "バンドサウンドとエレクトロサウンドが互いを邪魔しない絶妙な塩梅で上手く同居していて、今聴いても新しさを覚える普遍性\nゴーストノートの入れ方などは結構露骨に影響を受けていたりする\n間違いなく時代が追いつけなかったバンド",
+            "youtubeId": "s1OnLYsVaBU",
+            "tag": "やすき",
+            "canEmbed": true
+        },
+        {
+            "title": "TOOL / Jambi",
+            "desc": "重たくて太い音でさいこう",
+            "youtubeId": "ed_UWFr13pU",
+            "tag": "やすき",
+            "canEmbed": false
         },
         {
             "title": "Dream Theater / Metropolis Pt.1",
@@ -153,6 +167,13 @@
             "desc": "Gt. kohei ishino, Ba. シンゴ, Key. かわかみ",
             "youtubeId": "3LqU9ilCzSE",
             "tag": "コピーバンド・ライブ切り抜き",
+            "canEmbed": true
+        },
+        {
+            "title": "the blue hour / ハルノイデア",
+            "desc": "サポートKey. かわかみ",
+            "youtubeId": "uQ3051ix5eo",
+            "tag": "サポート/アレンジ",
             "canEmbed": true
         }
     ]
