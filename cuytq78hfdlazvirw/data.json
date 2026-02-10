@@ -16,19 +16,19 @@
             "id": "03",
             "name": "シンゴ",
             "role": "Bass",
-            "detail": "ここにベースとしての詳細なプロフィールやメッセージを記載します。"
+            "detail": "3歳の時にピアノを始め、なんやかんやで今ではベースに落ち着く。\nいろんなジャンルを無理矢理1曲に詰めこんだような曲が好き。"
         },
         {
             "id": "04",
             "name": "やすき",
             "role": "Drums",
-            "detail": "音楽的ルーツはあくまでポップスとしつつも、大学の軽音楽サークルであらゆるジャンルの音楽を雑多に吸収した結果、特定のジャンルに特化しすぎない現在のプレイスタイルを形成"
+            "detail": "音楽的ルーツはあくまでポップスとしつつも、大学の軽音楽サークルであらゆるジャンルの音楽を雑多に吸収した結果、特定のジャンルに特化しすぎない現在のプレイスタイルを形成。"
         },
         {
             "id": "05",
             "name": "かわかみ",
             "role": "Keyboard",
-            "detail": "初めて触った鍵盤は25鍵のMIDIキーボード。アナログモデリングシンセが好き。"
+            "detail": "初めて触った鍵盤は25鍵のMIDIキーボード。\n名前も知らないようなスマホの無料アプリからシンセの音作りを始める。\n色んな音が鳴っていてメロが綺麗な曲が好き。"
         }
     ],
     "live": [
@@ -72,15 +72,15 @@
     "gallery": [
         {
             "url": "196953_0.jpg",
-            "title": "ライブの様子"
+            "title": "Esprit De Live Vol.1"
         },
         {
             "url": "196954_0.jpg",
-            "title": "ライブの様子"
+            "title": "Esprit De Live Vol.1"
         },
         {
             "url": "196955_0.jpg",
-            "title": "ライブの様子"
+            "title": "Esprit De Live Vol.1"
         }
     ],
     "connect": [
@@ -109,7 +109,7 @@
             "desc": "ところどころで感じる、「彼女はもう脈無しだけどまだ可能性があると信じ込んでいる愚かな男」な雰囲気が良いです。分かる人には分かる。",
             "youtubeId": "iV5lALTsMLQ",
             "tag": "kohei ishino",
-            "canEmbed": true
+            "canEmbed": false
         },
         {
             "title": "花澤香菜 - I love new day!",
@@ -117,6 +117,20 @@
             "youtubeId": "0HA8o8OH8OA",
             "tag": "kohei ishino",
             "canEmbed": true
+        },
+        {
+            "title": "GONG - JAM Project",
+            "desc": "小学生の頃、兄から譲り受けたiPodから流れてきた荘厳なイントロと勇ましい歌声、怒涛の展開に衝撃を受けた",
+            "youtubeId": "fIdNfuL0BPM",
+            "tag": "シンゴ",
+            "canEmbed": false
+        },
+        {
+            "title": "再生讃美曲 - スタァライト九九組",
+            "desc": "スタァライトはいいぞ",
+            "youtubeId": "oO7eqJK0Dqo",
+            "tag": "シンゴ",
+            "canEmbed": false
         },
         {
             "title": "煙に白 / School Food Punishment",
@@ -133,16 +147,16 @@
             "canEmbed": false
         },
         {
-            "title": "Dream Theater / Metropolis Pt.1",
-            "desc": "ドリムシの中で一番最初に衝撃を受けた曲",
-            "youtubeId": "pEkWYrmk7OA",
+            "title": "ねごと / カロン",
+            "desc": "本当に1000回以上聴いた曲。全部これで良い。",
+            "youtubeId": "9UBvB8joUeE",
             "tag": "かわかみ",
-            "canEmbed": false
+            "canEmbed": true
         },
         {
-            "title": "サカナクション / ミュージック",
-            "desc": "聴く時期によって聴こえてくる音が変わる気がする曲",
-            "youtubeId": "z2TNnnQbGJs",
+            "title": "YUI / I'll be",
+            "desc": "人生で一番の後悔はYUIを後追いで知ったこと。YUI RADIOをリアルタイムで聴きたかった",
+            "youtubeId": "hdfUE27KC0U",
             "tag": "かわかみ",
             "canEmbed": true
         }
@@ -150,30 +164,37 @@
     "activities": [
         {
             "title": "ひびくみ / スカビオサの蕾",
-            "desc": "「殿様ガエル」というバンドで歌ってます。不倫相手を刺す曲です。",
+            "desc": "Vo. ひびくみ: 「殿様ガエル」というバンドで歌ってます。不倫相手を刺す曲です。",
             "youtubeId": "_BPYJNcXT1U",
             "tag": "バンド",
             "canEmbed": true
         },
         {
-            "title": "Omoinotake / 幾億光年 Covered By クミコ",
-            "desc": "Gt/Arrange. kohei ishino, Produce. かわかみ",
-            "youtubeId": "dEAGiluuu34",
-            "tag": "別プロジェクト・黒樹会",
-            "canEmbed": true
-        },
-        {
-            "title": "僕らのゲーム音楽",
-            "desc": "Gt. kohei ishino, Ba. シンゴ, Key. かわかみ",
-            "youtubeId": "3LqU9ilCzSE",
-            "tag": "コピーバンド・ライブ切り抜き",
+            "title": "「急がば回れ」(みんなでver.) 結構生活 -夏の思い出-",
+            "desc": "Ba. シンゴ: 高校時代の同期2人とアコースティックな感じでやっております",
+            "youtubeId": "b-pCgImB95s",
+            "tag": "アコースティック",
             "canEmbed": true
         },
         {
             "title": "the blue hour / ハルノイデア",
-            "desc": "サポートKey. かわかみ",
+            "desc": "Key. かわかみ: キーボード音源のみサポート。間奏のフリータイムがお気に入り",
             "youtubeId": "uQ3051ix5eo",
-            "tag": "サポート/アレンジ",
+            "tag": "バンド（サポート）",
+            "canEmbed": true
+        },
+        {
+            "title": "Omoinotake / 幾億光年 Covered By クミコ",
+            "desc": "Gt. kohei ishino, Produce. かわかみ: ヒットチャートをアレンジしていく企画",
+            "youtubeId": "dEAGiluuu34",
+            "tag": "カバー",
+            "canEmbed": true
+        },
+        {
+            "title": "LimiTpoint / violet resistance",
+            "desc": "Key. かわかみ: インディーズ映画主題歌。fripSideリスペクト。",
+            "youtubeId": "HXne5hIimwA",
+            "tag": "劇伴",
             "canEmbed": true
         }
     ]
