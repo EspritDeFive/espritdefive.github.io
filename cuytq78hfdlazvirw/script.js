@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <img src="https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg" alt="${item.title}" class="ref-thumb">
                             <div class="play-overlay">
                                 <span class="play-icon">▶</span>
-                                <span class="play-text">PLAY ON YOUTUBE (EXTERNAL)</span>
+                                <span class="play-text">Play on YouTube (External)</span>
                             </div>
                         </div>
                     </a>

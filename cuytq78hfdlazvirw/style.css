@@ -389,7 +389,6 @@ nav a {
 .m-info p {
     font-size: 0.75rem;
     color: #888;
-    text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
@@ -430,7 +429,6 @@ nav a {
 .tag {
     font-size: 0.7rem;
     font-weight: 900;
-    text-transform: uppercase;
     letter-spacing: 0.15em;
     padding: 3px 10px;
     background: var(--accent-green);
@@ -467,7 +465,6 @@ nav a {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.2);
     letter-spacing: 0.3em;
-    text-transform: uppercase;
     font-family: var(--font-heading);
     padding: 20px 0;
     font-style: italic;

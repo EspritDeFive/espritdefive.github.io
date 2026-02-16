@@ -67,7 +67,22 @@
             "desc": "GGG2025"
         }
     ],
-    "videos": [],
+    "videos": [
+        {
+            "title": "宇多田ヒカル / Automatic アレンジ",
+            "desc": "GGG2025",
+            "youtubeId": "fJCqoBp-fFY",
+            "tag": "Live",
+            "canEmbed": true
+        },
+        {
+            "title": "Official髭男dism / Pretender アレンジ",
+            "desc": "GGG2025",
+            "youtubeId": "ZJ-ID3i91G4",
+            "tag": "Live",
+            "canEmbed": true
+        }
+    ],
     "works": [],
     "gallery": [
         {
@@ -84,6 +99,14 @@
         }
     ],
     "connect": [
+        {
+            "platform": "Instagram（準備中）",
+            "url": "https://www.instagram.com/espritdefive/"
+        },
+        {
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/channel/UCv0tyIgoKSyEf4qRRvOKkRA"
+        },
         {
             "platform": "SoundCloud",
             "url": "https://soundcloud.com/esprit-de-five"
@@ -178,7 +201,7 @@
         },
         {
             "title": "the blue hour / ハルノイデア",
-            "desc": "Key. かわかみ: キーボード音源のみサポート。間奏のフリータイムがお気に入り",
+            "desc": "Key. かわかみ: サポートキーボード。間奏のフリータイムがお気に入り",
             "youtubeId": "uQ3051ix5eo",
             "tag": "バンド（サポート）",
             "canEmbed": true
@@ -192,7 +215,7 @@
         },
         {
             "title": "LimiTpoint / violet resistance",
-            "desc": "Key. かわかみ: インディーズ映画主題歌。fripSideリスペクト。",
+            "desc": "Key. かわかみ: インディーズ映画主題歌。\n監督からfripSideっぽい曲とのオーダーを受け、特大リスペクトを込めて作詞作曲編曲を担当",
             "youtubeId": "HXne5hIimwA",
             "tag": "劇伴",
             "canEmbed": true
