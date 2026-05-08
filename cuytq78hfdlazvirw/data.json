@@ -49,6 +49,13 @@
             "title": "わるあがき Vol.1",
             "tag": "Done",
             "desc": "@下北沢ろくでもない夜"
+        },
+        {
+            "date": "2026.5.24",
+            "title": "明大前音楽祭2026",
+            "tag": "Upcoming",
+            "desc": "@明大前駅周辺",
+            "url": "https://example.com"
         }
     ],
     "sounds": [
@@ -96,6 +103,10 @@
         {
             "url": "196955_0.jpg",
             "title": "Esprit De Live Vol.1"
+        },
+        {
+            "url": "EspritDeFive_image_202604.jpg",
+            "title": "Esprit De Five アーティスト写真"
         }
     ],
     "connect": [

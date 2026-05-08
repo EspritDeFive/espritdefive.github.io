@@ -76,7 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="arrow">→</span>
             </a>
         `,
-        generic: (item) => `<div class="generic-item">${renderMeta(item)}</div>`
+        generic: (item) => `
+            <div class="generic-item">
+                ${renderMeta(item)}
+                ${item.url ? `
+                    <a href="${item.url}" class="more-link" target="_blank" rel="noopener noreferrer">
+                        More Info <span class="arrow">→</span>
+                    </a>
+                ` : ''}
+            </div>
+        `
     };
 
     function renderSection(containerId, items, type = 'generic') {

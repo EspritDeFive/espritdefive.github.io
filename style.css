@@ -888,3 +888,27 @@ footer {
     opacity: 0;
     margin-top: 0;
 }
+
+/* Link for generic items (More Info) */
+.more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: var(--accent-green-bright);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    font-family: var(--font-heading);
+    transition: color 0.3s, transform 0.3s var(--anim-smooth);
+}
+
+.more-link:hover {
+    color: var(--gta-white);
+    transform: translateX(4px);
+}
+
+.more-link .arrow {
+    font-weight: 900;
+}
