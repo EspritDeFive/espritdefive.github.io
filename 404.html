@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found - Esprit De Five（エスプリ・ドゥ・ファイブ）</title>
+    <meta name="description" content="Esprit De Five Official Website - 404 Page Not Found">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="source/icon_transparent.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-black: #000000;
+            --gta-white: #ffffff;
+            --accent-green: #1a4d2e;
+            --accent-green-bright: #2e7d32;
+            --font-heading: 'Outfit', 'Noto Sans JP', sans-serif;
+            --font-body: 'Noto Sans JP', sans-serif;
+            --anim-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--gta-white);
+            font-family: var(--font-body);
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 背景のシネマティックな緑グラデーション */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 77, 46, 0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+            animation: glowPulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes glowPulse {
+            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* ロゴのアニメーション */
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 20px rgba(46, 125, 50, 0.4));
+            animation: logoFloat 4s infinite ease-in-out;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+            margin-bottom: 10px;
+            background: linear-gradient(180deg, var(--gta-white) 30%, rgba(255, 255, 255, 0.2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            color: var(--accent-green-bright);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* 高級感のあるボーダーアニメーション付きの「Go Back Home」ボタン */
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 36px;
+            color: var(--gta-white);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--accent-green);
+            transition: all 0.4s var(--anim-smooth);
+            cursor: pointer;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-home:hover {
+            background: rgba(26, 77, 46, 0.2);
+            border-left-color: var(--accent-green-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.2);
+        }
+
+        .btn-home .arrow {
+            font-weight: 900;
+            transition: transform 0.3s var(--anim-smooth);
+        }
+
+        .btn-home:hover .arrow {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <img src="source/icon_transparent.webp" alt="Esprit De Five" class="logo">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>
+            お探しのページは存在しないか、移動した可能性があります。<br>
+            才気とひらめきが交差する、元の音の世界へ戻りましょう。
+        </p>
+        <a href="index.html" class="btn-home">
+            Go Back Home <span class="arrow">→</span>
+        </a>
+    </div>
+</body>
+
+</html>

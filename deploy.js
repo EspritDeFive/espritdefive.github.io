@@ -12,7 +12,7 @@ console.log(' 本番デプロイプロセスを開始します... 🚀');
 console.log('=========================================');
 
 // コピー対象の個別ファイル
-const filesToCopy = ['index.html', 'style.css', 'script.js', 'data.json'];
+const filesToCopy = ['index.html', 'style.css', 'script.js', 'data.json', '404.html'];
 // コピー対象のディレクトリ（共通管理化されたため、assetsはデプロイコピー対象から除外）
 const dirsToCopy = [];
 
@@ -31,6 +31,14 @@ filesToCopy.forEach(file => {
                 .replace(/\.\.\/source\//g, 'source/')
                 // 検索エンジンの回避設定（noindex）を本番環境用に解除する
                 .replace(/<meta name="robots" content="noindex, nofollow">/g, '');
+            
+            fs.writeFileSync(destPath, updatedContent, 'utf8');
+            console.log(`[成功] ${file} をコピーし、本番用に最適化しました。`);
+        } else if (file === '404.html') {
+            let content = fs.readFileSync(srcPath, 'utf8');
+            
+            // 画像やリソースのパスを本番用（ルート直下基準）に変換 (※404ページ自体が検索に載らないよう、noindexはそのまま維持)
+            const updatedContent = content.replace(/\.\.\/source\//g, 'source/');
             
             fs.writeFileSync(destPath, updatedContent, 'utf8');
             console.log(`[成功] ${file} をコピーし、本番用に最適化しました。`);
