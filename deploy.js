@@ -38,7 +38,10 @@ filesToCopy.forEach(file => {
             let content = fs.readFileSync(srcPath, 'utf8');
             
             // 画像やリソースのパスを本番用（ルート直下基準）に変換 (※404ページ自体が検索に載らないよう、noindexはそのまま維持)
-            const updatedContent = content.replace(/\.\.\/source\//g, 'source/');
+            // 深い階層でのリンク切れを防ぐため、Go Back Homeのリンクを絶対URLに変換します
+            const updatedContent = content
+                .replace(/\.\.\/source\//g, 'source/')
+                .replace(/href="index.html"/g, 'href="https://espritdefive.github.io/"');
             
             fs.writeFileSync(destPath, updatedContent, 'utf8');
             console.log(`[成功] ${file} をコピーし、本番用に最適化しました。`);
