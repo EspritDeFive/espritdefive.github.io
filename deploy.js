@@ -13,8 +13,8 @@ console.log('=========================================');
 
 // コピー対象の個別ファイル
 const filesToCopy = ['index.html', 'style.css', 'script.js', 'data.json'];
-// コピー対象のディレクトリ
-const dirsToCopy = ['assets'];
+// コピー対象のディレクトリ（共通管理化されたため、assetsはデプロイコピー対象から除外）
+const dirsToCopy = [];
 
 // 1. ファイルのコピーと本番用最適化
 filesToCopy.forEach(file => {
@@ -34,8 +34,17 @@ filesToCopy.forEach(file => {
             
             fs.writeFileSync(destPath, updatedContent, 'utf8');
             console.log(`[成功] ${file} をコピーし、本番用に最適化しました。`);
+        } else if (file === 'script.js') {
+            let content = fs.readFileSync(srcPath, 'utf8');
+            
+            // ギャラリー画像のパスを本番用（ルート直下基準）に変換
+            // 例： ../assets/gallery/ -> assets/gallery/
+            const updatedContent = content.replace(/\.\.\/assets\//g, 'assets/');
+            
+            fs.writeFileSync(destPath, updatedContent, 'utf8');
+            console.log(`[成功] ${file} をコピーし、本番用に最適化しました。`);
         } else {
-            // index.html 以外はそのままコピー
+            // index.html / script.js 以外はそのままコピー
             fs.copyFileSync(srcPath, destPath);
             console.log(`[成功] ${file} をコピーしました。`);
         }
