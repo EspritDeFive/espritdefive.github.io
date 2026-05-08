@@ -1,0 +1,224 @@
+{
+    "members": [
+        {
+            "id": "01",
+            "name": "ひびくみ",
+            "role": "Vocal",
+            "detail": "幼少期から音楽に触れ、2018年よりシンガーとして活動開始。\n現在は東神奈川にあるライブ居酒屋でマンスリーライブを開催。"
+        },
+        {
+            "id": "02",
+            "name": "kohei ishino",
+            "role": "Guitar",
+            "detail": "基本的に趣味や興味は「広く浅く」がモットー。しかしどうやら音楽に関しては広く「深く」なりたいという欲求があるようだ。\nそれはあくまで欲求で現実がそうとは限らない。実際、音楽に関してかなりの偏食を指摘されがちだ。"
+        },
+        {
+            "id": "03",
+            "name": "シンゴ",
+            "role": "Bass",
+            "detail": "3歳の時にピアノを始め、なんやかんやで今ではベースに落ち着く。\nいろんなジャンルを無理矢理1曲に詰めこんだような曲が好き。"
+        },
+        {
+            "id": "04",
+            "name": "やすき",
+            "role": "Drums",
+            "detail": "音楽的ルーツはあくまでポップスとしつつも、大学の軽音楽サークルであらゆるジャンルの音楽を雑多に吸収した結果、特定のジャンルに特化しすぎない現在のプレイスタイルを形成。"
+        },
+        {
+            "id": "05",
+            "name": "かわかみ",
+            "role": "Keyboard",
+            "detail": "初めて触った鍵盤は25鍵のMIDIキーボード。\n名前も知らないようなスマホの無料アプリからシンセの音作りを始める。\n色んな音が鳴っていてメロが綺麗な曲が好き。"
+        }
+    ],
+    "live": [
+        {
+            "date": "2025.10.11",
+            "title": "GGG 2025 Day.1",
+            "tag": "Done",
+            "desc": "コピーバンドイベント @Zirco Tokyo"
+        },
+        {
+            "date": "2025.8.30",
+            "title": "Esprit De Live Vol.1",
+            "tag": "Done",
+            "desc": "kohei ishino主催ライブ @アイミュージックバー"
+        },
+        {
+            "date": "2024.5.12",
+            "title": "わるあがき Vol.1",
+            "tag": "Done",
+            "desc": "@下北沢ろくでもない夜"
+        }
+    ],
+    "sounds": [
+        {
+            "date": "2025.10.11",
+            "title": "宇多田ヒカル / Automatic アレンジ",
+            "url": "https://soundcloud.com/esprit-de-five/automatic-cover-live",
+            "tag": "Live",
+            "desc": "GGG2025"
+        },
+        {
+            "date": "2025.10.11",
+            "title": "Official髭男dism / Pretender アレンジ",
+            "url": "https://soundcloud.com/esprit-de-five/pretender",
+            "tag": "Live",
+            "desc": "GGG2025"
+        }
+    ],
+    "videos": [
+        {
+            "title": "宇多田ヒカル / Automatic アレンジ",
+            "desc": "GGG2025",
+            "youtubeId": "fJCqoBp-fFY",
+            "tag": "Live",
+            "canEmbed": true
+        },
+        {
+            "title": "Official髭男dism / Pretender アレンジ",
+            "desc": "GGG2025",
+            "youtubeId": "ZJ-ID3i91G4",
+            "tag": "Live",
+            "canEmbed": true
+        }
+    ],
+    "works": [],
+    "gallery": [
+        {
+            "url": "196953_0.jpg",
+            "title": "Esprit De Live Vol.1"
+        },
+        {
+            "url": "196954_0.jpg",
+            "title": "Esprit De Live Vol.1"
+        },
+        {
+            "url": "196955_0.jpg",
+            "title": "Esprit De Live Vol.1"
+        }
+    ],
+    "connect": [
+        {
+            "platform": "Instagram（準備中）",
+            "url": "https://www.instagram.com/espritdefive/"
+        },
+        {
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/channel/UCv0tyIgoKSyEf4qRRvOKkRA"
+        },
+        {
+            "platform": "SoundCloud",
+            "url": "https://soundcloud.com/esprit-de-five"
+        }
+    ],
+    "references": [
+        {
+            "title": "THE BACK HORN / 風船",
+            "desc": "雨降る前の土臭さが画面越しにも伝わってきて非常に良い",
+            "youtubeId": "DKfZgjgfooU",
+            "tag": "ひびくみ",
+            "canEmbed": true
+        },
+        {
+            "title": "Syrup16g / ハピネス",
+            "desc": "タイトルと歌詞がこんなにも相反してる作品は他にない(当社比)",
+            "youtubeId": "sKM6VFHmD_g",
+            "tag": "ひびくみ",
+            "canEmbed": true
+        },
+        {
+            "title": "Wake Up, Girls! - 土曜日のフライト",
+            "desc": "ところどころで感じる、「彼女はもう脈無しだけどまだ可能性があると信じ込んでいる愚かな男」な雰囲気が良いです。分かる人には分かる。",
+            "youtubeId": "iV5lALTsMLQ",
+            "tag": "kohei ishino",
+            "canEmbed": false
+        },
+        {
+            "title": "花澤香菜 - I love new day!",
+            "desc": "'day'が可算名詞であることなんてどうでも良くなる程の傑作。\n例えるならば鋭いキレのコーヒーと、滑らかなコクのミルクから成るカフェオレ。",
+            "youtubeId": "0HA8o8OH8OA",
+            "tag": "kohei ishino",
+            "canEmbed": true
+        },
+        {
+            "title": "GONG - JAM Project",
+            "desc": "小学生の頃、兄から譲り受けたiPodから流れてきた荘厳なイントロと勇ましい歌声、怒涛の展開に衝撃を受けた",
+            "youtubeId": "fIdNfuL0BPM",
+            "tag": "シンゴ",
+            "canEmbed": false
+        },
+        {
+            "title": "再生讃美曲 - スタァライト九九組",
+            "desc": "スタァライトはいいぞ",
+            "youtubeId": "oO7eqJK0Dqo",
+            "tag": "シンゴ",
+            "canEmbed": false
+        },
+        {
+            "title": "煙に白 / School Food Punishment",
+            "desc": "バンドサウンドとエレクトロサウンドが互いを邪魔しない絶妙な塩梅で上手く同居していて、今聴いても新しさを覚える普遍性\nゴーストノートの入れ方などは結構露骨に影響を受けていたりする\n間違いなく時代が追いつけなかったバンド",
+            "youtubeId": "s1OnLYsVaBU",
+            "tag": "やすき",
+            "canEmbed": true
+        },
+        {
+            "title": "TOOL / Jambi",
+            "desc": "重たくて太い音でさいこう",
+            "youtubeId": "ed_UWFr13pU",
+            "tag": "やすき",
+            "canEmbed": false
+        },
+        {
+            "title": "ねごと / カロン",
+            "desc": "本当に1000回以上聴いた曲。全部これで良い。",
+            "youtubeId": "9UBvB8joUeE",
+            "tag": "かわかみ",
+            "canEmbed": true
+        },
+        {
+            "title": "YUI / I'll be",
+            "desc": "人生で一番の後悔はYUIを後追いで知ったこと。YUI RADIOをリアルタイムで聴きたかった",
+            "youtubeId": "hdfUE27KC0U",
+            "tag": "かわかみ",
+            "canEmbed": true
+        }
+    ],
+    "activities": [
+        {
+            "title": "ひびくみ / スカビオサの蕾",
+            "desc": "Vo. ひびくみ: 「殿様ガエル」というバンドで歌ってます。不倫相手を刺す曲です。",
+            "youtubeId": "_BPYJNcXT1U",
+            "tag": "バンド",
+            "canEmbed": true
+        },
+        {
+            "title": "「急がば回れ」(みんなでver.) 結構生活 -夏の思い出-",
+            "desc": "Ba. シンゴ: 高校時代の同期2人とアコースティックな感じでやっております",
+            "youtubeId": "b-pCgImB95s",
+            "tag": "アコースティック",
+            "canEmbed": true
+        },
+        {
+            "title": "the blue hour / ハルノイデア",
+            "desc": "Key. かわかみ: サポートキーボード。間奏のフリータイムがお気に入り",
+            "youtubeId": "uQ3051ix5eo",
+            "tag": "バンド（サポート）",
+            "canEmbed": true
+        },
+        {
+            "title": "Omoinotake / 幾億光年 Covered By クミコ",
+            "desc": "Gt. kohei ishino, Produce. かわかみ: ヒットチャートをアレンジしていく企画",
+            "youtubeId": "dEAGiluuu34",
+            "tag": "カバー",
+            "canEmbed": true
+        },
+        {
+            "title": "LimiTpoint / violet resistance",
+            "desc": "Key. かわかみ: インディーズ映画主題歌。\n監督からfripSideっぽい曲とのオーダーを受け、特大リスペクトを込めて作詞作曲編曲を担当",
+            "youtubeId": "HXne5hIimwA",
+            "tag": "劇伴",
+            "canEmbed": true
+        }
+    ]
+}
