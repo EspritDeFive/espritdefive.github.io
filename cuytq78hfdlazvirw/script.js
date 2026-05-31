@@ -179,6 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', () => {
+        // スマホやタブレットなどの画面幅（900px以下）では、スクロール処理のオーバーヘッドを完全に無くすため早期リターンします
+        if (window.innerWidth <= 900) return;
+
         lastScrollY = window.scrollY;
         if (!ticking) {
             window.requestAnimationFrame(updateParallax);

@@ -123,7 +123,7 @@ nav a {
 /* Hero */
 .hero {
     height: 100vh;
-    height: 100dvh;
+    height: 100svh; /* モバイルでのアドレスバー伸縮による画面の飛び・ガタつきを防ぐため svh を採用 */
     /* Modern mobile support */
     position: relative;
     display: flex;
@@ -781,6 +781,12 @@ footer {
 
     .logo-text {
         font-size: 0.95rem; /* スマホ用にフォントサイズを縮小 */
+    }
+
+    .share-btn {
+        backdrop-filter: none !important; /* スマホでのスクロール開始時の引っ掛かり（ぼかし再計算の遅延）を防ぐため無効化 */
+        -webkit-backdrop-filter: none !important;
+        background: rgba(0, 0, 0, 0.7); /* 背景黒を少し濃くして視認性を確保 */
     }
 
     .nav-toggle {
