@@ -144,6 +144,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     function updateParallax() {
+        // スマホやタブレットなどの画面幅（900px以下）では、スクロール慣性との競合による「画面の飛び・ガタつき」を防ぐため、パララックス処理をスキップします
+        if (window.innerWidth <= 900) {
+            if (heroLogo) {
+                heroLogo.style.transform = '';
+                heroLogo.style.opacity = '';
+            }
+            if (conceptPoster) {
+                conceptPoster.style.transform = '';
+            }
+            ticking = false;
+            return;
+        }
+
         const scroll = lastScrollY;
 
         // Hero Logo Parallax
@@ -233,4 +246,45 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // === 7. Share Modal Logic ===
+    const shareTrigger = document.getElementById('share-trigger');
+    const shareModal = document.getElementById('share-modal');
+    const modalClose = document.getElementById('modal-close');
+
+    if (shareTrigger && shareModal && modalClose) {
+        // モーダルを開く
+        shareTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            shareModal.classList.add('active');
+            shareModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // 背後のスクロールを防止
+        });
+
+        // モーダルを閉じる（閉じるボタン）
+        modalClose.addEventListener('click', () => {
+            closeShareModal();
+        });
+
+        // モーダルを閉じる（オーバーレイ部分のクリック）
+        shareModal.addEventListener('click', (e) => {
+            if (e.target === shareModal) {
+                closeShareModal();
+            }
+        });
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && shareModal.classList.contains('active')) {
+                closeShareModal();
+            }
+        });
+    }
+
+    function closeShareModal() {
+        if (!shareModal) return;
+        shareModal.classList.remove('active');
+        shareModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = ''; // スクロール制限を解除
+    }
 });

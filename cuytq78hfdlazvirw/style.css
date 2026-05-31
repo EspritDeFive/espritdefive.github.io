@@ -94,6 +94,7 @@ header {
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     color: var(--gta-white);
+    white-space: nowrap; /* 絶対に改行させない */
 }
 
 nav ul {
@@ -766,6 +767,22 @@ footer {
 }
 
 @media (max-width: 900px) {
+    header {
+        padding: 15px 20px; /* スマホ時はヘッダーの余白をコンパクトに */
+    }
+
+    .logo-container {
+        gap: 12px; /* ロゴ画像とテキストの間隔を縮小 */
+    }
+
+    .main-logo {
+        height: 32px; /* ロゴ画像を少しコンパクトに */
+    }
+
+    .logo-text {
+        font-size: 0.95rem; /* スマホ用にフォントサイズを縮小 */
+    }
+
     .nav-toggle {
         display: flex;
     }
@@ -911,4 +928,173 @@ footer {
 
 .more-link .arrow {
     font-weight: 900;
+}
+
+/* ==========================================================================
+   Share Button & QR Code Modal Popup Styling (GTA / Dark Green Theme)
+   ========================================================================== */
+
+/* Header Share Action */
+.header-actions {
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* PC時はナビゲーションの右側に少し隙間を空けて配置 */
+}
+
+@media (max-width: 900px) {
+    .header-actions {
+        margin-left: auto; /* スマホ時は右端（ハンバーガーメニューの隣）へ寄せる */
+        margin-right: 15px;
+    }
+}
+
+/* Share Button */
+.share-btn {
+    background: rgba(0, 0, 0, 0.5); /* 背後の画像に重なっても見やすいよう半透明の黒を敷く */
+    backdrop-filter: blur(4px); /* 背後を軽くぼかして視認性と高級感を向上 */
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* ボーダーを少し馴染ませる */
+    color: var(--gta-white);
+    border-radius: 0; /* 角丸を削除し、ソリッドな四角形に */
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s var(--anim-smooth);
+}
+
+.share-icon {
+    font-size: 0.95rem; /* アイコンを少し見やすく調整 */
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.share-btn:hover {
+    background: var(--accent-green);
+    border-color: var(--accent-green-bright);
+    box-shadow: 0 0 15px rgba(46, 125, 50, 0.4);
+}
+
+.share-btn:hover .share-icon {
+    transform: scale(1.15) rotate(-15deg);
+}
+
+.share-btn:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .share-btn-text {
+        display: none;
+    }
+    .share-btn {
+        padding: 8px 12px;
+        gap: 0;
+    }
+}
+
+/* Modal Overlay (Glassmorphism Effect) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--anim-smooth);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal Card */
+.modal-card {
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 4px solid var(--accent-green-bright);
+    border-radius: 0; /* 角丸を削除し、ソリッドな四角形に */
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px 30px;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.4s var(--anim-smooth);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(46, 125, 50, 0.15);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1) translateY(0);
+}
+
+/* Modal Close Trigger */
+.modal-close-trigger {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.modal-close-trigger:hover {
+    color: var(--gta-white);
+    transform: rotate(90deg);
+}
+
+/* Modal Content Inner */
+.modal-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: var(--gta-white);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.modal-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* QR Code Container */
+.qr-container {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 0; /* QRコンテナも角丸を削除 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px; /* 下部余白調整 */
+    width: fit-content;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.qr-image {
+    width: 280px;
+    height: 280px;
+    display: block;
 }

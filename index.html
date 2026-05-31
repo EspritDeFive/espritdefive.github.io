@@ -12,7 +12,7 @@
     <meta property="og:title" content="Esprit De Five（エスプリ・ドゥ・ファイブ / EDF バンド）">
     <meta property="og:description" content="5人の異なる感性を持ち寄り、その境界に立ち上がる自由な音を切り取るバンド・音楽プロジェクト「Esprit De Five（エスプリ・ドゥ・ファイブ / EDF）」の公式サイトです。">
     <meta property="og:image" content="source/header_v006.jpg">
-    <meta property="og:url" content="https://espritdefive.github.io/">
+    <meta property="og:url" content="https://espritdefive.com/">
     <meta property="og:site_name" content="Esprit De Five Official Website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -39,7 +39,7 @@
       "@type": "MusicGroup",
       "name": "Esprit De Five",
       "alternateName": ["エスプリ・ドゥ・ファイブ", "EDF"],
-      "url": "https://espritdefive.github.io/",
+      "url": "https://espritdefive.com/",
       "logo": "https://espritdefive.github.io/source/icon_transparent.webp",
       "description": "5人の異なる感性を持ち寄り、その境界に立ち上がる自由な音を切り取るバンド・音楽プロジェクト。",
       "genre": ["J-Pop", "Alternative Rock"],
@@ -69,11 +69,6 @@
                 <img src="source/icon_transparent.webp" alt="Esprit De Five" class="main-logo">
                 <h1 class="logo-text">Esprit De Five</h1>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <nav id="main-nav">
                 <ul>
                     <li><a href="#concept">Concept</a></li>
@@ -88,6 +83,16 @@
                     <li><a href="#activities">Activities</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <button id="share-trigger" class="share-btn" aria-label="ホームページをシェアする">
+                    <span class="share-icon">🔗</span>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -106,7 +111,7 @@
         <section id="concept" class="section-container">
             <div class="content-wrapper">
                 <h2 class="section-title">Concept</h2>
-                <p class="section-desc">バンド・音楽プロジェクト Esprit De Five（エスプリ・ドゥ・ファイブ / 略称：EDF バンド）とは。</p>
+                <p class="section-desc">バンド・音楽プロジェクト Esprit De Five とは。</p>
                 <div class="concept-grid">
                     <div class="concept-visual">
                         <img src="source/poster2.jpg" alt="Esprit De Five Poster" class="concept-poster full-size">
@@ -227,6 +232,20 @@
             <p class="copyright">&copy; 2026 Esprit De Five. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <!-- Share Modal (QR Code Only) -->
+    <div id="share-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card">
+            <button id="modal-close" class="modal-close-trigger" aria-label="モーダルを閉じる">&times;</button>
+            <div class="modal-content">
+                <h3 class="modal-title">Welcome to EDF!</h3>
+                <p class="modal-desc">Share with your friends!</p>
+                <div class="qr-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://espritdefive.com/&color=ffffff&bgcolor=000000" alt="QR Code" class="qr-image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
